@@ -1,11 +1,65 @@
-ALGORITHM checkpoint
+ALGORITHM Sum and distinct elementsh
 VAR
-    set1 : INTEGER := 
-    set2 : INTEGER := 
-    
+ Set1 := array of integer
+ Set2 := array of integer
+ Sum := integer
+ htab= HASH_TABLE<integer,integer>
+ i:= integer
+ j:= integer
 BEGIN
-read (set1)
-read (set2)
-
-    
+i = 0 
+WHILE (i< Set1.lenth) DO
+    FOR i FROM 0 TO Set1.lenth 
+     IF (set1[i] = set2[j]) THEN
+         Sum += Sum + set1[i]
+    END_IF
+    END_FOR
+END_WHILE
+j = 0 
+WHILE (j< Set1.lenth) DO
+    FOR j FROM 0 TO set2.lenth 
+     IF (set1[i] = set2[j]) THEN
+         Sum += Sum + set1[j]
+    END_IF
+    END_FOR
+END_WHILE
+read(Sum)
 END
+
+//methode 2 
+ ALGORITHM sum and distinct elements
+ VAR 
+ Set1 := array of integer
+ Set2 := array of integer
+ Sum := integer
+ HASH_TABLE ( integer, integer)
+ count := integer
+ i := integer
+ j:= integer
+ BEGIN
+ FOR i FROM 0 to Set1.lenth DO
+ IF (htab.lookup(set1[i]) =true) THEN
+     htab.get(set1[i], count+1)
+     ELSE
+        htab.insert (set1[i], 1)
+        IF (count>1) THEN
+    Sum =+ Sum + Set2[j]
+    ELSE read(Set2[j])
+    END_IF
+
+ END_IF
+ END_FOR
+
+ FOR j FROM 0 to set2.lenth DO
+ IF (htab.lookup(set2[j]) =true) THEN
+     htab.get(Set2[j], count+1)
+     ELSE
+        htab.insert (Set2[j], 1)
+
+ END_IF
+ END_FOR
+IF (count>1) THEN
+    Sum =+ Sum + Set2[j]
+    ELSE read(Set2[j])
+END_IF
+ END
