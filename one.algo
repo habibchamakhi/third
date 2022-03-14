@@ -1,0 +1,11 @@
+ALGORITHM checkpoint
+VAR
+    set1 : INTEGER := 
+    set2 : INTEGER := 
+    
+BEGIN
+read (set1)
+read (set2)
+
+    
+END
